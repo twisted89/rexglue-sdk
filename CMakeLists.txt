@@ -26,6 +26,8 @@ option(REXGLUE_ENABLE_PERF_COUNTERS        "Enable lightweight perf counter regi
 # Propagate profiling defines globally (compiled out in Release)
 if(REXGLUE_ENABLE_TRACY)
     add_compile_definitions($<$<NOT:$<CONFIG:Release>>:REXGLUE_ENABLE_PROFILING>)
+    add_compile_definitions(isatty=_isatty)
+    add_compile_definitions(itoa=_itoa)
 endif()
 if(REXGLUE_ENABLE_PERF_COUNTERS)
     add_compile_definitions($<$<NOT:$<CONFIG:Release>>:REXGLUE_ENABLE_PERF_COUNTERS>)

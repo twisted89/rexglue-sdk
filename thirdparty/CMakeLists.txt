@@ -366,6 +366,7 @@ if(REXGLUE_ENABLE_TRACY)
     add_library(Tracy::TracyClient ALIAS TracyClient)
 
     target_compile_features(TracyClient PUBLIC cxx_std_11)
+    target_compile_definitions(TracyClient PUBLIC fileno=_fileno)
 
     target_include_directories(TracyClient SYSTEM PUBLIC
         $<BUILD_INTERFACE:${TRACY_PUBLIC_DIR}>

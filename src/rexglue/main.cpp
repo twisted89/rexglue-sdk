@@ -67,7 +67,7 @@ int main(int argc, char** argv) {
   std::string log_level = "info";
   std::string log_file;
   bool verbose = false;
-  bool force = false;
+  bool force = true;
 
   app.add_option("--log-level", log_level, "Log level (trace, debug, info, warn, error)")
       ->type_name("LEVEL");
